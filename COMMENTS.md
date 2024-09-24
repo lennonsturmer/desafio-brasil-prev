@@ -1,21 +1,58 @@
-# COMMENTS.md
-
 ## Guia para Executar a Simulação de Jogo
 
-Este documento fornece instruções detalhadas para configurar, executar e testar a aplicação de simulação de jogo baseada no FastAPI.
+Este documento fornece instruções detalhadas para configurar, executar e testar a aplicação de simulação de jogo.
 
-### Requisitos
+### Rodar a aplicação
 
-Antes de iniciar, certifique-se de ter os seguintes softwares instalados no seu sistema:
+### 1) Instale o python:
 
-- **Python 3.8+**: A versão mais recente do Python.
-- **pip**: O gerenciador de pacotes do Python.
-- **Virtualenv** (opcional, mas recomendado): Para criar ambientes isolados de desenvolvimento.
+#### Linux
+```
+sudo apt install python3.10
+```
+#### Windows
+- Baixe o instalador do Python a partir do site oficial (https://www.python.org/downloads) e siga as instruções.
+- Durante a instalação, certifique-se de selecionar a opção "Add Python to PATH".
 
-### Passo 1: Clonar o Repositório
+### 2) Instale pip (package manager):
+#### Linux
+```
+sudo apt install python3-pip
+```
+#### Windows
+- O pip já vem instalado junto com o Python. Verifique executando no terminal:
+```
+pip --version
+```
 
-Se você ainda não fez isso, clone o repositório da aplicação:
+### 3) Instale virtualenv, crie o ambiente virtual e ative:
+#### Linux
+```
+sudo pip install virtualenv 
+virtualenv venv
+source venv/bin/activate
+```
+#### Windows
+```
+pip install virtualenv
+virtualenv venv
+venv\Scripts\activate
+```
 
-```bash
-git clone https://github.com/usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+__OBS:__ A linha de comando do terminal precisa começar com `(venv)`
+
+### 4) Instale todos os pacotes necessários:
+
+```
+pip install --no-cache-dir --upgrade -r requirements.txt
+``` 
+### 5) Inicialize a API:
+```
+uvicorn main:app --host 127.0.0.1 --port 8000
+```
+or
+
+```
+python main.py
+```
+### 6) Teste acessando http://127.0.0.1:8000/docs
