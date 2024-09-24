@@ -55,4 +55,4 @@ or
 ```
 python main.py
 ```
-### 6) Teste acessando http://127.0.0.1:8000/docs
+### 6) Teste acessando o endpoint através da documentação Swagger no link http://127.0.0.1:8000/docs
