@@ -1,11 +1,11 @@
 import uvicorn
 from fastapi import FastAPI
 
-from app.controller import game
+from app.controller import game_controller
 
 app = FastAPI()
 
-app.include_router(game.router)
+app.include_router(game_controller.router)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
